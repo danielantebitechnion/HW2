@@ -1,4 +1,3 @@
-
 #ifndef EX2_GAME_H
 #define EX2_GAME_H
 #include "Card.h"
@@ -43,7 +42,7 @@ public:
      *          True if the game ended
      *          False otherwise
      */
-    bool isOver();
+    bool isOver() const;
 
 
     /*
@@ -54,13 +53,19 @@ public:
      */
     GameStatus getGameStatus() const;
 
+    //TODO: complete the Mtmchkin class.
+    Mtmchkin();
+    Mtmchkin(const char *playerName);
+    ~Mtmchkin();
+    Mtmchkin(const Mtmchkin&);
+
 
 private:
     Card* m_cardsArray = NULL;
     GameStatus m_gameStatus;
     Player m_player;
     static int m_currentCard;
-    const int m_numOfCards;
+    int m_numOfCards = 0;
 };
 
 
