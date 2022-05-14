@@ -53,19 +53,30 @@ public:
      */
     GameStatus getGameStatus() const;
 
-    //TODO: complete the Mtmchkin class.
-    Mtmchkin();
-    Mtmchkin(const char *playerName);
-    ~Mtmchkin();
-    Mtmchkin(const Mtmchkin&);
+    /*
+     *D'tor , delete the m_cardsArray memory allocation
+     */
 
+    ~Mtmchkin();
 
 private:
+    //private funcion the Update m_gameStatus
+    void updateGameStatus();
+
+    //Variable from Card class that contain array of cards
     Card* m_cardsArray = NULL;
+
+    //Variable that contain the game status
     GameStatus m_gameStatus;
+
+    //Variable from class Player that contain the Player details
     Player m_player;
-    static int m_currentCard;
-    int m_numOfCards = 0;
+
+    //Variable that contain the index of the current card that should play
+    int m_currentCard =0;
+
+    //number of cards in game
+    const int m_numOfCards;
 };
 
 
